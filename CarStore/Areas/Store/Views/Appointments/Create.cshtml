@@ -1,0 +1,83 @@
+﻿@model CarStore.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Appointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Employee_ID" class="control-label"></label>
+                <select asp-for="Employee_ID" class ="form-control" asp-items="ViewBag.Employee_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_ID" class="control-label"></label>
+                <select asp-for="Customer_ID" class ="form-control" asp-items="ViewBag.Customer_ID"></select>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Car_Type" class="control-label"></label>
+                <input asp-for="Car_Type" class="form-control" />
+                <span asp-validation-for="Car_Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car_Model" class="control-label"></label>
+                <input asp-for="Car_Model" class="form-control" />
+                <span asp-validation-for="Car_Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purpose" class="control-label"></label>
+                <input asp-for="Purpose" class="form-control" />
+                <span asp-validation-for="Purpose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Budget" class="control-label"></label>
+                <input asp-for="Budget" class="form-control" />
+                <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reminder" class="control-label"></label>
+                <input asp-for="Reminder" type="datetime-local" class="form-control" />
+                <span asp-validation-for="Reminder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback" class="control-label"></label>
+                <input asp-for="Feedback" class="form-control" />
+                <span asp-validation-for="Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Follow_up_Appointment" class="control-label"></label>
+                <input asp-for="Follow_up_Appointment" class="form-control" />
+                <span asp-validation-for="Follow_up_Appointment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

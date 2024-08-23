@@ -1,0 +1,94 @@
+﻿@model CarStore.Models.Safety
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Safety</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Car_ID" class="control-label"></label>
+                <select asp-for="Car_ID" class ="form-control" asp-items="ViewBag.Car_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Airbags" class="control-label"></label>
+                <input asp-for="Airbags" class="form-control" />
+                <span asp-validation-for="Airbags" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ABS_BAS_brakes" class="control-label"></label>
+                <input asp-for="ABS_BAS_brakes" class="form-control" />
+                <span asp-validation-for="ABS_BAS_brakes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Electronic_stability_control" class="control-label"></label>
+                <input asp-for="Electronic_stability_control" class="form-control" />
+                <span asp-validation-for="Electronic_stability_control" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle_body_stability" class="control-label"></label>
+                <input asp-for="Vehicle_body_stability" class="form-control" />
+                <span asp-validation-for="Vehicle_body_stability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Electronic_traction_control" class="control-label"></label>
+                <input asp-for="Electronic_traction_control" class="form-control" />
+                <span asp-validation-for="Electronic_traction_control" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Traction_control_during_acceleration" class="control-label"></label>
+                <input asp-for="Traction_control_during_acceleration" class="form-control" />
+                <span asp-validation-for="Traction_control_during_acceleration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crosswind_stability" class="control-label"></label>
+                <input asp-for="Crosswind_stability" class="form-control" />
+                <span asp-validation-for="Crosswind_stability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hill_start_assist" class="control-label"></label>
+                <input asp-for="Hill_start_assist" class="form-control" />
+                <span asp-validation-for="Hill_start_assist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hill_descent_assist" class="control-label"></label>
+                <input asp-for="Hill_descent_assist" class="form-control" />
+                <span asp-validation-for="Hill_descent_assist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Active_parking_assistance" class="control-label"></label>
+                <input asp-for="Active_parking_assistance" class="form-control" />
+                <span asp-validation-for="Active_parking_assistance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Automatic_protection" class="control-label"></label>
+                <input asp-for="Automatic_protection" class="form-control" />
+                <span asp-validation-for="Automatic_protection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attention_assist" class="control-label"></label>
+                <input asp-for="Attention_assist" class="form-control" />
+                <span asp-validation-for="Attention_assist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opt_360_degree_camera" class="control-label"></label>
+                <input asp-for="Opt_360_degree_camera" class="form-control" />
+                <span asp-validation-for="Opt_360_degree_camera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

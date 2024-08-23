@@ -1,0 +1,75 @@
+﻿@model CarStore.Models.Exterior
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Exterior</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.High_beam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.High_beam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Low_beam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Low_beam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Daytime_running_lights)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Daytime_running_lights)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tail_lights)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tail_lights)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rearview_mirrors)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rearview_mirrors)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rain_sensing_wipers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rain_sensing_wipers)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Power_trunk_lid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Power_trunk_lid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hands_free_trunk_opening)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hands_free_trunk_opening)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Car)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Car.ID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

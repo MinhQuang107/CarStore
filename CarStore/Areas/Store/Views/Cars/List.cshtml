@@ -1,0 +1,98 @@
+﻿@model CarStore.Areas.Store.Models.PaginatedList<Car>
+@{
+    Layout = null;
+}
+@if (Model != null)
+{
+    @foreach (var item in Model.Items)
+    {
+        <div class="card col-sm-6">
+            <div class="card-img-top">
+                <div id="carouselExampleIndicators-@item.ID" class="carousel slide" data-bs-ride="carousel" style="width:auto; height:auto; overflow: hidden;">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators-@item.ID" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        @for (var i = 1; i < item.ImageCar.Count; i++)
+                        {
+                            <button type="button" data-bs-target="#carouselExampleIndicators-@item.ID" data-bs-slide-to="@i" aria-label="Slide @i"></button>
+                        }
+                    </div>
+                    <div class="carousel-inner">
+                        @if (item.ImageCar != null && item.ImageCar.Any())
+                        {
+                            <div class="carousel-item active">
+                                <img src="~/uploads/images/avatar/@item.ImageCar.FirstOrDefault().Image_URL" class="img-fluid" style="width:auto; height:30%" alt="Car Image" />
+                            </div>
+                            @foreach (var i in item.ImageCar.Skip(1))
+                            {
+                                <div class="carousel-item">
+                                    <img src="~/uploads/images/avatar/@i.Image_URL" class="img-fluid" style="width:auto; height:30%" alt="Car Image" />
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <span>None</span>
+                        }
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-@item.ID" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-@item.ID" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Year - @item.Color - @item.Fuel_Type</p>
+                <a asp-controller="Cars" asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary">Go details</a>
+            </div>
+        </div>
+    }
+}
+<div class="d-flex justify-content-center">
+    <nav>
+        <ul class="pagination">
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link pageIndex" pageIndex="@(Model.PageIndex - 1)">Previous</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+            }
+
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link pageIndex" pageIndex="@i">@i</a>
+                </li>
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link pageIndex" pageIndex="@(Model.PageIndex + 1)">Next</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled"><span class="page-link">Next</span></li>
+            }
+        </ul>
+    </nav>
+</div>
+
+<script>
+    $('.pageIndex').click(function () {
+        const pageIndex = $(this).attr('pageIndex'); // Lấy giá trị từ nút vừa click
+        $("input[name='pageIndex']").val(pageIndex); // Gán giá trị cho input
+        console.log($("input[name='pageIndex']").val()); // Kiểm tra giá trị đã gán
+        siteView.search(); // Gọi hàm search
+    });
+
+</script>

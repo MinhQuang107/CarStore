@@ -1,0 +1,69 @@
+﻿@model CarStore.Models.Exterior
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Exterior</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Car_ID" class="control-label"></label>
+                <select asp-for="Car_ID" class ="form-control" asp-items="ViewBag.Car_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="High_beam" class="control-label"></label>
+                <input asp-for="High_beam" class="form-control" />
+                <span asp-validation-for="High_beam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Low_beam" class="control-label"></label>
+                <input asp-for="Low_beam" class="form-control" />
+                <span asp-validation-for="Low_beam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Daytime_running_lights" class="control-label"></label>
+                <input asp-for="Daytime_running_lights" class="form-control" />
+                <span asp-validation-for="Daytime_running_lights" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tail_lights" class="control-label"></label>
+                <input asp-for="Tail_lights" class="form-control" />
+                <span asp-validation-for="Tail_lights" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rearview_mirrors" class="control-label"></label>
+                <input asp-for="Rearview_mirrors" class="form-control" />
+                <span asp-validation-for="Rearview_mirrors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rain_sensing_wipers" class="control-label"></label>
+                <input asp-for="Rain_sensing_wipers" class="form-control" />
+                <span asp-validation-for="Rain_sensing_wipers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Power_trunk_lid" class="control-label"></label>
+                <input asp-for="Power_trunk_lid" class="form-control" />
+                <span asp-validation-for="Power_trunk_lid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hands_free_trunk_opening" class="control-label"></label>
+                <input asp-for="Hands_free_trunk_opening" class="form-control" />
+                <span asp-validation-for="Hands_free_trunk_opening" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

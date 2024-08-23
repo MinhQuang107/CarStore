@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Car>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "CarStore - Cars Condition - QuickSearch";
+}
+<h1>Search Car</h1>
+
+@* <a href='@Url.Action("Create", "Roles", new { area = "Admin" })'>Create</a> *@
+
+<div class="row">
+    <div class="col-md-4 bg-white pb-3 me-3" style="border: 1px solid #eae7e7; border-radius: 5px">
+        <form asp-action="SearchCar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="col-form-label text-start">Condition</label>
+                <div class="">
+                    <select class="form-select form-select-solid form-select-sm" data-kt-select2="true" name="condition" data-placeholder="All" data-allow-clear="true" data-control="select2">
+                        <option value=""></option>
+                        @foreach (var item in (IList<string>)ViewData["conditions"])
+                        {
+                            <!option value="@item">@item</!option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-start">Make</label>
+                <div class="">
+                    <select class="form-select form-select-solid form-select-sm" name="make" data-control="select2" data-placeholder="All" data-allow-clear="true" data-control="select2">
+                        <option></option>
+                        @foreach (var item in (IList<string>)ViewData["makes"])
+                        {
+                            <!option value="@item">@item</!option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-start">Model</label>
+                <div class="">
+                    <select class="form-select form-select-solid form-select-sm" name="model" data-control="select2" data-placeholder="All" data-allow-clear="true" data-control="select2">
+                        <option></option>
+                        @foreach (var item in (IList<string>)ViewData["models"])
+                        {
+                            <!option value="@item">@item</!option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label for="maxMileage" class="control-label mb-3">Max Mileage</label>
+                <input name="maxMileage" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-start">Body</label>
+                <div class="">
+                    <select class="form-select form-select-solid form-select-sm" name="body" data-control="select2" data-placeholder="All" data-allow-clear="true" data-control="select2">
+                        <option></option>
+                        @foreach (var item in (IList<string>)ViewData["body"])
+                        {
+                            <!option value="@item">@item</!option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="form-group col-sm-6">
+                    <label for="dateFrom" class="control-label mb-3">Date From</label>
+                    <input name="dateFrom" id="dateFrom" class="form-control" />
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="dateTo" class="control-label mb-3">Date To</label>
+                    <input name="dateTo" id="dateTo" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mt-3 mb-3">
+                <div class="form-group col-sm-6">
+                    <label for="priceFrom" class="control-label mb-3">Price From</label>
+                    <input name="priceFrom" id="priceFrom" class="form-control" />
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="priceTo" class="control-label mb-3">Price To</label>
+                    <input name="priceTo" id="priceTo" class="form-control" />
+                </div>
+            </div>
+            <input name="pageIndex" class="form-control" hidden />
+            @* <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div> *@
+        </form>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-light-info btn-sm me-2 font-weight-bold btnSearch" id="btnSearch">Search</button>
+        </div>
+    </div>
+    <div class="col-md-8 bg-white row" id="kt_search_result" style="border: 1px solid #eae7e7; border-radius: 5px">
+
+    </div>
+</div>
+
+
+<script>
+    $('.modalselect2').select2();
+
+    var siteView = {
+        search: function () {
+            var data = {
+                condition: $("select[name='condition']").val(),
+                make: $("select[name='make']").val(),
+                model: $("select[name='model']").val(),
+                maxMileage: $("input[name='maxMileage']").val(),
+                body: $("select[name='body']").val(),
+                dateFrom: $("input[name='dateFrom']").val(),
+                dateTo: $("input[name='dateTo']").val(),
+                priceFrom: $("input[name='priceFrom']").val(),
+                priceTo: $("input[name='priceTo']").val(),
+                pageIndex: $("input[name='pageIndex']").val(),
+            };
+
+            siteRequest.loadAjaxUrl("/Store/Cars/Search", "#kt_search_result", "#kt_search_result", data, true);
+        }
+    };
+    $('.btnSearch').click(function () {
+        siteView.search();
+    });
+
+</script>

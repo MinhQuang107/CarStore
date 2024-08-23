@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CarStore.Models.Exterior>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.High_beam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Low_beam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Daytime_running_lights)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tail_lights)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rearview_mirrors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rain_sensing_wipers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Power_trunk_lid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hands_free_trunk_opening)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.High_beam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Low_beam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Daytime_running_lights)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tail_lights)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rearview_mirrors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rain_sensing_wipers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Power_trunk_lid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hands_free_trunk_opening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

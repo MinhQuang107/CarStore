@@ -1,0 +1,113 @@
+﻿@model IEnumerable<CarStore.Models.Safety>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Airbags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ABS_BAS_brakes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Electronic_stability_control)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle_body_stability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Electronic_traction_control)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Traction_control_during_acceleration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crosswind_stability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hill_start_assist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hill_descent_assist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active_parking_assistance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Automatic_protection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attention_assist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opt_360_degree_camera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airbags)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABS_BAS_brakes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Electronic_stability_control)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle_body_stability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Electronic_traction_control)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Traction_control_during_acceleration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crosswind_stability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hill_start_assist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hill_descent_assist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active_parking_assistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Automatic_protection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attention_assist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opt_360_degree_camera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

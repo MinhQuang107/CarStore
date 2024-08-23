@@ -1,0 +1,162 @@
+﻿@model CarStore.Models.Interior_Convenience
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Interior_Convenience</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Interior_material)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Interior_material)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Steering_wheel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Steering_wheel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Multi_information_display)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Multi_information_display)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gear_shift_paddles)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gear_shift_paddles)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Keyless_entry_system)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Keyless_entry_system)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cruise_Control)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cruise_Control)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Electronic_parking_brake)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Electronic_parking_brake)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto_dimming_rearview_mirror)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Auto_dimming_rearview_mirror)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Seats)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Seats)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Front_seats)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Front_seats)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Second_row_seats)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Second_row_seats)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Third_row_seats)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Third_row_seats)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Automatic_climate_control)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Automatic_climate_control)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Entertainment_screen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Entertainment_screen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Audio_system)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Audio_system)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Touchpad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Touchpad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Voice_control)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Voice_control)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Integrated_GPS_navigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Integrated_GPS_navigation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Apple_Carplay_Android_Auto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Apple_Carplay_Android_Auto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Wireless_phone_charging)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Wireless_phone_charging)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Starry_sky)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Starry_sky)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sunroof)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sunroof)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Soft_close_doors)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Soft_close_doors)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Car)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Car.ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

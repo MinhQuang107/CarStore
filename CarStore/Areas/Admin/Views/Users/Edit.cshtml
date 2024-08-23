@@ -1,0 +1,116 @@
+﻿@using CarStore.Areas.Admin.Models
+@{
+    ViewData["Title"] = "CarStore - User - Edit";
+}
+@model AppUserModel
+
+<form id="dataForm" method="POST">
+    <input hidden type="text" value="@Html.DisplayTextFor(model => model.Id)" name="id" />
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">User name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control fv-row" name="userName" value="@Html.DisplayTextFor(model => model.UserName)" />
+        </div>
+        <label class="col-sm-2 col-form-label">FullName</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control fv-row" name="fullName" value="@Html.DisplayTextFor(model => model.FullName)" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control fv-row" name="email" value="@Html.DisplayTextFor(model => model.Email)" />
+        </div>
+        <label class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control fv-row" name="password" value="" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Permission</label>
+        <div class="col-sm-10">
+@*             <select class="form-control modalselect2" data-dropdown-parent="#kt_modal_0" data-live-search="true" multiple="multiple" name="roleName">
+                @foreach (var item in (IList<AppRoleModel>)ViewData["Roles"])
+                {
+                    <!option class="form-control" value="@item.RoleName"
+                    @if (Model.Roles != null)
+                    {
+                        @Html.Raw(Array.IndexOf(Model.Roles.Cast<string>().ToArray(), item.RoleName) > -1 ? "selected" : "")
+                    }> @item.RoleName </!option>
+                }
+            </select> *@
+            <select class="form-select form-select-solid form-select-sm" data-kt-select2="true" name="roleName" data-allow-clear="true" multiple="multiple" data-control="select2">
+                <option value=""></option>
+                @foreach (var item in (IList<AppRoleModel>)ViewData["Roles"])
+                {
+                    <!option value="@item.RoleName"
+                    @if (Model.Roles != null)
+                    {
+                        @Html.Raw(Array.IndexOf(Model.Roles.Cast<string>().ToArray(), item.RoleName) > -1 ? "selected" : "")
+                    }>@item.RoleName</!option>
+                }
+            </select>
+        </div>
+    </div>
+
+
+    <div class="d-flex flex-center pt-10">
+        <button type="submit" class="btn btn-primary  mb-10">Save</button>
+        <button type="reset" class="btn btn-light ms-10 mb-10" data-bs-dismiss="modal">Cancel</button>
+    </div>
+</form>
+
+<script>
+    $('.modalselect2').select2();
+    var fieldValid = {
+        userName: {
+            validators: {
+                notEmpty: {
+                    message: 'This feild is required',
+                },
+                stringLength: {
+                    min: 4,
+                    max: 30,
+                    message: 'The name must be more than 4 and less than 30 characters long',
+                },
+                regexp: {
+                    regexp: /^[a-zA-Z0-9_.]+$/,
+                    message: 'The name can only consist of alphabetical, number, underscore and dot characters',
+                },
+            },
+        },
+
+        email: {
+            validators: {
+                notEmpty: {
+                    message: 'This feild is required',
+                },
+                emailAddress: {
+                    message: 'The value is not a valid email address',
+                },
+            },
+        },
+
+        password: {
+            validators: {
+    @*notEmpty: {
+        message: 'The password is required',
+        },*@
+                    },
+                },
+
+    confirm_password: {
+        validators: {
+            identical: {
+                compare: function () {
+                    var form = document.getElementById('dataForm');
+                    return form.querySelector('[name="password"]').value;
+                },
+                message: 'The password and its confirm are not the same',
+                        },
+        },
+    },
+            };
+    siteRequest.submit("dataForm", fieldValid, "", "/Admin/Action", "", "");
+
+</script>

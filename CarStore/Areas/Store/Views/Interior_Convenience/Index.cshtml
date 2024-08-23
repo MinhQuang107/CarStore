@@ -1,0 +1,173 @@
+﻿@model IEnumerable<CarStore.Models.Interior_Convenience>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Interior_material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Steering_wheel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Multi_information_display)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gear_shift_paddles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Keyless_entry_system)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cruise_Control)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Electronic_parking_brake)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto_dimming_rearview_mirror)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Front_seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Second_row_seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Third_row_seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Automatic_climate_control)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entertainment_screen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Audio_system)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Touchpad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voice_control)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Integrated_GPS_navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apple_Carplay_Android_Auto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wireless_phone_charging)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Starry_sky)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sunroof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soft_close_doors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interior_material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Steering_wheel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Multi_information_display)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gear_shift_paddles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Keyless_entry_system)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cruise_Control)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Electronic_parking_brake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auto_dimming_rearview_mirror)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Front_seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Second_row_seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Third_row_seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Automatic_climate_control)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entertainment_screen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Audio_system)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Touchpad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voice_control)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Integrated_GPS_navigation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apple_Carplay_Android_Auto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wireless_phone_charging)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Starry_sky)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sunroof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soft_close_doors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

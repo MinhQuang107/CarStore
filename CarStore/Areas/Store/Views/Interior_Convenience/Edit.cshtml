@@ -1,0 +1,146 @@
+﻿@model CarStore.Models.Interior_Convenience
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Interior_Convenience</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Car_ID" class="control-label"></label>
+                <select asp-for="Car_ID" class="form-control" asp-items="ViewBag.Car_ID"></select>
+                <span asp-validation-for="Car_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Interior_material" class="control-label"></label>
+                <input asp-for="Interior_material" class="form-control" />
+                <span asp-validation-for="Interior_material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Steering_wheel" class="control-label"></label>
+                <input asp-for="Steering_wheel" class="form-control" />
+                <span asp-validation-for="Steering_wheel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Multi_information_display" class="control-label"></label>
+                <input asp-for="Multi_information_display" class="form-control" />
+                <span asp-validation-for="Multi_information_display" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gear_shift_paddles" class="control-label"></label>
+                <input asp-for="Gear_shift_paddles" class="form-control" />
+                <span asp-validation-for="Gear_shift_paddles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Keyless_entry_system" class="control-label"></label>
+                <input asp-for="Keyless_entry_system" class="form-control" />
+                <span asp-validation-for="Keyless_entry_system" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cruise_Control" class="control-label"></label>
+                <input asp-for="Cruise_Control" class="form-control" />
+                <span asp-validation-for="Cruise_Control" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Electronic_parking_brake" class="control-label"></label>
+                <input asp-for="Electronic_parking_brake" class="form-control" />
+                <span asp-validation-for="Electronic_parking_brake" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto_dimming_rearview_mirror" class="control-label"></label>
+                <input asp-for="Auto_dimming_rearview_mirror" class="form-control" />
+                <span asp-validation-for="Auto_dimming_rearview_mirror" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Seats" class="control-label"></label>
+                <input asp-for="Seats" class="form-control" />
+                <span asp-validation-for="Seats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Front_seats" class="control-label"></label>
+                <input asp-for="Front_seats" class="form-control" />
+                <span asp-validation-for="Front_seats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Second_row_seats" class="control-label"></label>
+                <input asp-for="Second_row_seats" class="form-control" />
+                <span asp-validation-for="Second_row_seats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Third_row_seats" class="control-label"></label>
+                <input asp-for="Third_row_seats" class="form-control" />
+                <span asp-validation-for="Third_row_seats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Automatic_climate_control" class="control-label"></label>
+                <input asp-for="Automatic_climate_control" class="form-control" />
+                <span asp-validation-for="Automatic_climate_control" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entertainment_screen" class="control-label"></label>
+                <input asp-for="Entertainment_screen" class="form-control" />
+                <span asp-validation-for="Entertainment_screen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Audio_system" class="control-label"></label>
+                <input asp-for="Audio_system" class="form-control" />
+                <span asp-validation-for="Audio_system" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Touchpad" class="control-label"></label>
+                <input asp-for="Touchpad" class="form-control" />
+                <span asp-validation-for="Touchpad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Voice_control" class="control-label"></label>
+                <input asp-for="Voice_control" class="form-control" />
+                <span asp-validation-for="Voice_control" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Integrated_GPS_navigation" class="control-label"></label>
+                <input asp-for="Integrated_GPS_navigation" class="form-control" />
+                <span asp-validation-for="Integrated_GPS_navigation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apple_Carplay_Android_Auto" class="control-label"></label>
+                <input asp-for="Apple_Carplay_Android_Auto" class="form-control" />
+                <span asp-validation-for="Apple_Carplay_Android_Auto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wireless_phone_charging" class="control-label"></label>
+                <input asp-for="Wireless_phone_charging" class="form-control" />
+                <span asp-validation-for="Wireless_phone_charging" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Starry_sky" class="control-label"></label>
+                <input asp-for="Starry_sky" class="form-control" />
+                <span asp-validation-for="Starry_sky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sunroof" class="control-label"></label>
+                <input asp-for="Sunroof" class="form-control" />
+                <span asp-validation-for="Sunroof" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soft_close_doors" class="control-label"></label>
+                <input asp-for="Soft_close_doors" class="form-control" />
+                <span asp-validation-for="Soft_close_doors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

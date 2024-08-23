@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "CarStore - Cars - Contact";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="name" class="control-label">Name</label>
+                <input name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label">Email</label>
+                <input name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="phone" class="control-label">Phone</label>
+                <input name="phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="address" class="control-label">Address</label>
+                <input name="address" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="carType" class="control-label">Car Type</label>
+                <input name="carType" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="carModel" class="control-label">Car Model</label>
+                <input name="carModel" class="form-control" />
+ 
+            </div>
+            <div class="form-group">
+                <label for="purpose" class="control-label">Purpose</label>
+                <input name="purpose" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="budget" class="control-label">Budget</label>
+                <input name="budget" class="form-control" />
+            </div>
+            @*<div class="form-group">
+                <label for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label for="location" class="control-label">Location</label>
+                <input name="location" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="note" class="control-label">Note</label>
+                <input name="note" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="reminder" class="control-label">Reminder</label>
+                <input name="reminder" type="datetime-local" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="feedback" class="control-label">Feedback</label>
+                <input name="feedback" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="followUpAppointment" class="control-label">Follow up Appointment</label>
+                <input name="Follow_up_Appointment" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

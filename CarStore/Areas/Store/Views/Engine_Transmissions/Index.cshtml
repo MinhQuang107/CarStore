@@ -1,0 +1,89 @@
+﻿@model IEnumerable<CarStore.Models.Engine_Transmission>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Engine_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maximum_power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maximum_torque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transmission_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Drivetrain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Acceleration_0_100kmh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maximum_speed_kmh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fuel_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ECO_start_stop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Engine_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maximum_power)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maximum_torque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transmission_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drivetrain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acceleration_0_100kmh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maximum_speed_kmh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ECO_start_stop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

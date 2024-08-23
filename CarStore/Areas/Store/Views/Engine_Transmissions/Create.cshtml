@@ -1,0 +1,74 @@
+﻿@model CarStore.Models.Engine_Transmission
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Engine_Transmission</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Car_ID" class="control-label"></label>
+                <select asp-for="Car_ID" class ="form-control" asp-items="ViewBag.Car_ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Engine_type" class="control-label"></label>
+                <input asp-for="Engine_type" class="form-control" />
+                <span asp-validation-for="Engine_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Maximum_power" class="control-label"></label>
+                <input asp-for="Maximum_power" class="form-control" />
+                <span asp-validation-for="Maximum_power" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Maximum_torque" class="control-label"></label>
+                <input asp-for="Maximum_torque" class="form-control" />
+                <span asp-validation-for="Maximum_torque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transmission_type" class="control-label"></label>
+                <input asp-for="Transmission_type" class="form-control" />
+                <span asp-validation-for="Transmission_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Drivetrain" class="control-label"></label>
+                <input asp-for="Drivetrain" class="form-control" />
+                <span asp-validation-for="Drivetrain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Acceleration_0_100kmh" class="control-label"></label>
+                <input asp-for="Acceleration_0_100kmh" class="form-control" />
+                <span asp-validation-for="Acceleration_0_100kmh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Maximum_speed_kmh" class="control-label"></label>
+                <input asp-for="Maximum_speed_kmh" class="form-control" />
+                <span asp-validation-for="Maximum_speed_kmh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fuel_type" class="control-label"></label>
+                <input asp-for="Fuel_type" class="form-control" />
+                <span asp-validation-for="Fuel_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ECO_start_stop" class="control-label"></label>
+                <input asp-for="ECO_start_stop" class="form-control" />
+                <span asp-validation-for="ECO_start_stop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

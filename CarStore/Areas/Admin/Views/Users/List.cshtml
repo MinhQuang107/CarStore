@@ -1,0 +1,46 @@
+﻿@using CarStore.Areas.Admin.Models;
+@{
+    ViewData["Title"] = "CarStore - Admin - List Users";
+}
+
+@model IEnumerable<CarStore.Areas.Admin.Models.AppUserModel>
+<div class="card card-flush shadow-lg">
+    <div class="card-body pt-0">
+        <table class="table text-start table-row-bordered align-middle table-row-dashed table-hover table-row-gray-300 gy-1 align-center" id="dataTable">
+            <thead>
+                <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                    <th class="text-center">User Name</th>
+                    <th>PERMISSION</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (AppUserModel user in Model)
+                {
+                    <tr>
+                        <td class="text-center"><a href="javascript:;" class="badge badge-light-info">@user.UserName</a></td>
+                        <td>@string.Join(" , ", user.Roles.ToList())</td>
+                        <td>
+                            <a href="javascript:viewKPI(@user.Id);" title="View User KPI" class="badge badge-light-danger">@user.FullName</a>
+                        </td>
+                        <td>@user.Email</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 btn-edit-item" title="Edit details">
+                                <i class="la la-edit"></i>
+                            </a>
+                            <a href="javascript:siteView.delete(@user.Id);" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 btn-edit-item" title="Edit details">
+                                <i class="la la-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<script>
+    wissPaging.show('#dataTable')
+</script>
